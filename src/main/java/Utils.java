@@ -1,30 +1,30 @@
 public class Utils {
 
-        public static boolean isGreenLight = false;
+    public static boolean isGreenLight = false;
 
-        public static int maxSpeed = 10;
+    public static int maxSpeed = 10;
 
-    public static int[] getSpeed (int[] speeds) {
-        int count = 0;
+    public static String[] getSpeed(String[] speeds) {
+        int c = 0;
         if (!isGreenLight) {
-            for (int i = 0; i < speeds.length; i++) {
-                if (speeds[i] > maxSpeed) {
-                    count++;
+            for (String text : speeds) {
+                String[] parts = text.split(" ");
+                if (Integer.parseInt(parts[1]) < maxSpeed) {
+                    c++;
                 }
             }
         }
 
-        int[] speedsRetired = new int[count];
+        String []returned = new String[c];
         int countAdd = 0;
-        if (!isGreenLight) {
-            for (int i = 0; i < speeds.length; i++) {
-                if (speeds[i] > maxSpeed) {
-                    speedsRetired[countAdd] = speeds[i];
-                    countAdd++;
-                }
+        for (String text : speeds) {
+            String[] parts = text.split(" ");
+            if (Integer.parseInt(parts[1]) < maxSpeed) {
+                returned[countAdd] = parts[0];
+                countAdd++;
             }
         }
-        return speedsRetired;
+        return returned;
     }
 
 }
