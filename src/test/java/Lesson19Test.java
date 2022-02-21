@@ -16,5 +16,5 @@ public class Lesson19Test {
 
         Assertions.assertArrayEquals(expected, actual);
     }
-    
+
 }
