@@ -14,7 +14,6 @@ public class Utils {
                 }
             }
         }
-
         String []returned = new String[c];
         int countAdd = 0;
         for (String text : speeds) {
