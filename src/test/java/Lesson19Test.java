@@ -64,9 +64,9 @@ public class Lesson19Test {
 
     @Test
 
-    public void shouldMaxSpeed19(){
+    public void shouldMaxSpeed0(){
 
-        Utils.maxSpeed = 3;
+        Utils.maxSpeed = 0;
         String [] speeds = {"Иван 27", "Петя 51", "Семён 37"};
 
         String [] expected = {};
@@ -75,6 +75,22 @@ public class Lesson19Test {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
+
+    @Test
+
+    public void shouldMaxSpeed10(){
+
+        Utils.maxSpeed = 10;
+        String [] speeds = {"Иван 10", "Петя 1", "Семён 10"};
+
+        String [] expected = {"Петя"};
+        String [] actual = Utils.getSpeed(speeds);
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
 
     @Test
 
@@ -89,6 +105,5 @@ public class Lesson19Test {
         Assertions.assertArrayEquals(expected, actual);
 
     }
-
 
 }
