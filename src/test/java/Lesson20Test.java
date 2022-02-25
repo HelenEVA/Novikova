@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Lesson19Test {
+public class Lesson20Test {
 
     @Test
 
