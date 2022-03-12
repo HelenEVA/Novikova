@@ -3,109 +3,109 @@ import org.junit.jupiter.api.Test;
 
 public class Lesson19Test {
 
- @Test
+    @Test
 
- public void shouldGetSurvivors() {
+    public void shouldGetSurvivors() {
 
-     String[] speeds = new String[3];
-     speeds[0] = "Вася 5";
-     speeds[1] = "Петя 15";
-     speeds[2] = "Олег 7";
+        String[] speeds = new String[3];
+        speeds[0] = "Вася 5";
+        speeds[1] = "Петя 15";
+        speeds[2] = "Олег 7";
 
-     String[] expected = {"Вася", "Олег"};
-     String[] actual = Utils.getSpeed(speeds);
+        String[] expected = {"Вася", "Олег"};
+        String[] actual = Utils.getSpeed(speeds);
 
-     Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
 
- }
+    }
 
- @Test
+    @Test
 
- public void shouldNotGetSurvivors(){
+    public void shouldNotGetSurvivors() {
 
-     String []speeds = new String[3];
-     speeds[0] = "Вася 17";
-     speeds[1] = "Петя 15";
-     speeds[2] = "Олег 77";
+        String[] speeds = new String[3];
+        speeds[0] = "Вася 17";
+        speeds[1] = "Петя 15";
+        speeds[2] = "Олег 77";
 
-     String [] expected = {};
-     String [] actual = Utils.getSpeed(speeds);
+        String[] expected = {};
+        String[] actual = Utils.getSpeed(speeds);
 
-     Assertions.assertArrayEquals(expected, actual);
- }
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
- @Test
+    @Test
 
- public void shouldGet3Survivors(){
+    public void shouldGet3Survivors() {
 
-     String []speeds = new String[3];
-     speeds[0] = "Иван 1";
-     speeds[1] = "Петя 3";
-     speeds[2] = "Семён 9";
+        String[] speeds = new String[3];
+        speeds[0] = "Иван 1";
+        speeds[1] = "Петя 3";
+        speeds[2] = "Семён 9";
 
-     String [] expected = {"Иван", "Петя", "Семён"};
-     String [] actual = Utils.getSpeed(speeds);
+        String[] expected = {"Иван", "Петя", "Семён"};
+        String[] actual = Utils.getSpeed(speeds);
 
-     Assertions.assertArrayEquals(expected, actual);
- }
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
- @Test
+    @Test
 
- public void shouldMaxSpeed10() {
+    public void shouldMaxSpeed10() {
 
-     Utils.maxSpeed = 10;
-     String[] speeds = {"Иван 10", "Петя 1", "Семён 10"};
+        Utils.maxSpeed = 10;
+        String[] speeds = {"Иван 10", "Петя 1", "Семён 10"};
 
-     String[] expected = {"Петя"};
-     String[] actual = Utils.getSpeed(speeds);
+        String[] expected = {"Петя"};
+        String[] actual = Utils.getSpeed(speeds);
 
-     Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
 
- }
+    }
 
- @Test
+    @Test
 
- public void shouldIsGreenLight(){
+    public void shouldIsGreenLight() {
 
-     Utils.isGreenLight = false;
-     String [] speeds = {"Иван 7", "Петя 51", "Семён 10"};
+        Utils.isGreenLight = false;
+        String[] speeds = {"Иван 7", "Петя 51", "Семён 10"};
 
-     String [] expected = {"Иван"};
-     String [] actual = Utils.getSpeed(speeds);
+        String[] expected = {"Иван"};
+        String[] actual = Utils.getSpeed(speeds);
 
-     Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
 
- }
-
- @Test
-
- public void shouldPlayerForSpeedLimitValue9() {
-
-     Utils.maxSpeed = 10;
-     String[] speeds = {"Иван 9", "Петя 15", "Семён 10"};
-
-     String[] expected = {"Иван"};
-     String[] actual = Utils.getSpeed(speeds);
-
-     Assertions.assertArrayEquals(expected, actual);
-
- }
-
- @Test
-
- public void shouldPlayerForSpeedLimitValue11() {
-
-     Utils.maxSpeed = 10;
-     String[] speeds = {"Иван 11", "Петя 15", "Семён 10"};
-
-     String[] expected = {};
-     String[] actual = Utils.getSpeed(speeds);
-
-     Assertions.assertArrayEquals(expected, actual);
-
- }
+    }
 
 
+    @Test
+
+    public void shouldPlayerForSpeedLimitValue9() {
+
+        Utils.maxSpeed = 10;
+        String[] speeds = {"Иван 9", "Петя 15", "Семён 10"};
+
+        String[] expected = {"Иван"};
+        String[] actual = Utils.getSpeed(speeds);
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+
+    @Test
+
+    public void shouldPlayerForSpeedLimitValue11() {
+
+        Utils.maxSpeed = 10;
+        String[] speeds = {"Иван 11", "Петя 15", "Семён 10"};
+
+        String[] expected = {};
+        String[] actual = Utils.getSpeed(speeds);
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
 
 
 }
